@@ -361,7 +361,7 @@ export const updateDiscription = async(userId, newDiscription) => {
 
 export const updatePhoProfile = async(userId, imageFile) => {
 
-    console.log(userId, imageFile);
+    //console.log(userId, imageFile);
     
     try {
         const formData = new FormData();
@@ -386,7 +386,7 @@ export const updatePhoProfile = async(userId, imageFile) => {
 
 export const updatePhoCover = async(userId, imageFile) => {
 
-    console.log(userId, imageFile);
+    //console.log(userId, imageFile);
     
     try {
         const formData = new FormData();

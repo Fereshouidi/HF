@@ -317,7 +317,7 @@ const iconClassName = isFriend ? 'fas fa-check' :
             userData && usersProfileClicked[usersProfileClicked.length-1] &&
             usersProfileClicked[usersProfileClicked.length-1]._id == "1"
             || invitationCondition == 'block'
-            || usersProfileClicked[usersProfileClicked.length-1] && usersProfileClicked[usersProfileClicked.length-1]._id == userData._id? 'invisible':
+            || usersProfileClicked[usersProfileClicked.length-1] && userData && usersProfileClicked[usersProfileClicked.length-1]._id == userData._id? 'invisible':
             liked? 'like likedShape'
             : 'like'
             } >{

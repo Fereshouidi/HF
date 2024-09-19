@@ -70,8 +70,12 @@ export default function AccountEdit(){
     const sendNewPhoProfile = async() => { 
         try{     
             const userDataUpdating = await updatePhoProfile(userData._id, editPhoProfile.file);
-            localStorage.setItem('userData', JSON.stringify(await userDataUpdating));
-            alert('updating pho-profile is done !')
+            if(userDataUpdating){
+                localStorage.setItem('userData', JSON.stringify(await userDataUpdating));
+                alert('updating pho-cover is done !')    
+            }else{
+                alert('something went wrong !')   
+            }
         }catch(err){
             console.log(err);
             alert('something went wrong !');
@@ -81,8 +85,12 @@ export default function AccountEdit(){
     const sendNewPhoCover = async() => { 
         try{     
             const userDataUpdating = await updatePhoCover(userData._id, editPhoCover.file);
-            localStorage.setItem('userData', JSON.stringify(await userDataUpdating));
-            alert('updating pho-cover is done !')
+            if(userDataUpdating){
+                localStorage.setItem('userData', JSON.stringify(await userDataUpdating));
+                alert('updating pho-cover is done !')    
+            }else{
+                alert('something went wrong !')   
+            }
         }catch(err){
             console.log(err);
             alert('something went wrong !');
@@ -218,7 +226,7 @@ export default function AccountEdit(){
                     />
                 </label>
                 <button onClick={() => {sendNewPhoCover()}}>DONE</button>
-                <p className="alert">Double click the button to edit the image ..</p>
+                {/* <p className="alert">Double click the button to edit the image ..</p> */}
             </div>
 
             <div id="edit_phoProfile_cart" className={activity=='phoProfile'? "cart ": 'invisible'}>
@@ -237,7 +245,7 @@ export default function AccountEdit(){
                     />
                 </label>
                 <button onClick={() => {sendNewPhoProfile()}}>DONE</button>
-                <p className="alert">Double click the button to edit the image ..</p>
+                {/* <p className="alert">Double click the button to edit the image ..</p> */}
             </div>
 
             <div id="edit_discription_cart" className={activity=='discription'? "cart ": 'invisible'}>
